@@ -1,0 +1,45 @@
+To test this query.c you can do,
+./run_test.sh or ./run_test_hd_sh. ---> this will compile, build, run and compare outputs.
+
+Or
+
+1. do, Cleaning "make clean" or
+	rm -rf ./unsorted
+	mkdir -p ./unsorted
+	rm -rf ./out_sorted
+	mkdir out_sorted
+	rm -f query
+	rm -f sorted_output.bin
+	rm -f easy_stdout.txt
+
+2. Build the code : "make" or
+	g++ query.c -o query
+
+3. Run the code :
+   ./query <path to input binary file> or 
+   ./query <path to input binary file>  <input txt file> <output txt file>
+
+4. compare outputs,
+   diff easy_stdout.txt easy_expected_stdout.txt
+
+
+TODO :
+- current code is not optimized properly, need to do optimization seperately.
+
+
+Problem Design :
+
+Problem is devided in following steps :
+1. Do external file sorting due to limited RAM size
+   - Read data from file and apply heap sort (Complexity = n Log(n))
+   - Sort data and merge all files into one.
+
+2. Divide large file into smaller file (each file fize < RAM size)
+   and apend prefix and suffix as filename.
+
+3. Apply modified binary search. (Complexity Log(n))
+   - If data withing the range of file name then load data in memory and do binary search
+   - If not, do binary search within prefix/sufix filename. No need to load all the data into the memory. 
+
+note:
+Code is tested on ubuntu linux system
