@@ -48,8 +48,58 @@
    Input: 2 Output : 1 (2 = 1+1-->1*1 = 1)
    Input 10 Output : 36 (10 = 3+3+4 --> 3*3*4 = 36)
 
- 
+11.Calculate XOR from 1 to n.
+
+12.Given an integer array of n integers, find sum of bit differences in all pairs that
+   can be formed from array elements. Bit difference of a pair (x, y) is count of
+   different bits at same positions in binary representations of x and y. 
+   For example, bit difference for 2 and 7 is 2. Binary representation of 2 is 010
+   and 7 is 111 ( first and last bits differ in two numbers).
+
+13.Given an array of integers. find the maximum XOR subarray value in given array.
+   Expected time complexity O(n).
+   Examples:
+   Input: arr[] = {1, 2, 3, 4}
+   Output: 7
+   The subarray {3, 4} has maximum XOR value
+
+   Input: arr[] = {8, 1, 2, 12, 7, 6}
+   Output: 15
+   The subarray {1, 2, 12} has maximum XOR value
+
+   Input: arr[] = {4, 6}
+   Output: 6
+   The subarray {6} has maximum XOR value
+
+14.Print a square matrix in spiral form
+
+15.Print odd/even using multiple threads
+
+16.Write C program to print all permutations of a given string
+
+17.Impplement your own MALLOC function in C
+
+18.Find a median from a stream of flowing numbers
+   (Use 2 heap based solution)
+
+19.Implement you own atoi and itoa
+
+20.Given a char array find a possible solution like this,
+   input = "ABC"
+   output =A, AB, ABC, B, BC, C
+
+21.Write a function to find the angle between the minute and hour hand in
+   an analog clock.
+
+22.Given a keypad as shown in diagram, and a n digit number, list all words
+   which are possible by pressing these numbers.
+
+
+
+
+/******************************************/
  List of Bit Manipulation Questions :
+/******************************************/
 
 1.Find the Index of highest bit set of a 32 bit number (without any loops)
   Or Find the index left most bit (or MSB) which is set in a number
@@ -85,4 +135,20 @@
   Input:  7 (00...00111)   --->  Output: 6 (00...00110)
   (n & n-1)
 
+6.Find XOR of 2 numbers without using XOR operator
+   (x | y) & (~x | ~y)
 
+7.Find MIN and MAX of two numbers (a and b) Or return min and max from a and b without
+   comparator operator.
+
+8.Check if given number is Fibonacci or not ? (without computing fibonacci numbers)
+   
+9.Test if given number is power of 2.
+
+10.Give a fastest way to multiply a number by 7.
+   ((n << 3) - n)
+
+11. Check if number is little Endian or Big Endian
+    and convert numbder from one endianness to other endianness
+
+12.Reverse Bits of given integer in O(1) time. 
