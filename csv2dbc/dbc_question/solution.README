@@ -1,0 +1,65 @@
+-----------------------------------------------------------
+-----------------------------------------------------------
+Please check example.dbc and test.dbc files.
+example_givem.dbc is provided by you however, it has minor issue
+
+To Test this code from python commands,
+
+python solution.py -i <input_file> -o <output_file>
+diff example_out.dbc example.dbc
+
+python solution.py -i example.csv -o example_out.dbc
+diff example_out.dbc example.dbc
+
+To Test this code using Makefile,
+make --> to test all the tests (*_out.dbc is output files)
+make example ---> to test example.csv
+make test    ---> to test test.csv
+
+To Clean,
+make clean
+-----------------------------------------------------------
+-----------------------------------------------------------
+Assumptions :
+1. Start of signal(main message - "*Message Name") is always 2 lines.
+2. message can have finite number of normal signals and
+   enumed signal in one file which can be fitted in System RAM.
+   In short, file_size is assumed to be less then RAM of the system.
+3. Assuming only one process is handling the input/output file.
+4. Code is tested with Python Version 2.7.9
+-----------------------------------------------------------
+-----------------------------------------------------------
+Following things in the description/word document are not clear :
+1. In the given example.dbc file, line 3 should be,
+   SG_ Output_Power : 12|12@1- (1.5,100) [-1000|1500] "kW" VCU, BMS
+   Signal name is Output_Power not just Output
+
+2. If signal is not cyclic do we need to print following line with None or discard full line in output ?
+   BA_ "sendPeriod" BO_ 436
+   Current, implementation doesn't print this line if message is not cyclic.
+   
+3. Line 6th and 7th are generated when enum is present in signal. 
+   How messages should look like if one message has multiple signals with
+   *Enum = Yes ?
+   Currently, this senario is tested in testcases/test5 and following
+   format is used. It print with B0_, then all the SG_ and then BA_ "sendPeriod"
+   To test this senario Output_Power and DC_DC_State both are created enumed signal in test5
+   for local testing.
+   e.g. Output of test4.csv file is :
+   BO_ 528 DC_DC_Converter_Status: 7 DCDC
+   SG_ Input_Power : 0|12@1+ (1,0) [0|1023] "kW" VCU
+   SG_ Output_Power : 12|12@1- (1.5,100) [-1000|1500] "kW" VCU, BMS
+   SG_ DC_DC_State : 24|3@1+ (1,0) [0|7] "" BMS
+
+   BA_ "sendPeriod" BO_ 528 10;
+
+   BA_ "FieldType" SG_ 528 Output_Power "Output_Power";
+   VAL_ 528 Output_Power 7 "Error" 6 "UnderTemp" 5 "OverTemp" 1 "Start" 0 "Init" ;
+
+   BA_ "FieldType" SG_ 528 DC_DC_State "DC_DC_State";
+   VAL_ 528 DC_DC_State 7 "Error" 6 "UnderTemp" 5 "OverTemp" 3 "Idle" 1 "Start" 0 "Init" ;
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+
+

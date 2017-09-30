@@ -1,0 +1,25 @@
+BO_ 436 VCU_Converter_Status: 5 VCU
+SG_ Pedal_Pos : 0|12@1+ (0.125,0) [0|100] "%" GTW, BMS, CHG
+SG_ Torque_Command : 12|12@1- (1.5,100) [-1000|1500] "Nm" GTW, BMS
+SG_ VCU_State : 24|3@1+ (1,0) [0|7] "" 
+SG_ VCU_State2 : 32|3@1+ (1,0) [0|7] "" 
+
+BA_ "sendPeriod" BO_ 436 100;
+
+BO_ 528 DC_DC_Converter_Status: 7 DCDC
+SG_ Input_Power : 0|12@1+ (1,0) [0|1023] "kW" VCU
+SG_ Output_Power : 12|12@1- (1.5,100) [-1000|1500] "kW" VCU, BMS
+SG_ DC_DC_State : 24|3@1+ (1,0) [0|7] "" BMS
+
+BA_ "sendPeriod" BO_ 528 10;
+
+BA_ "FieldType" SG_ 528 DC_DC_State "DC_DC_State";
+VAL_ 528 DC_DC_State 7 "Error" 6 "UnderTemp" 5 "OverTemp" 3 "Idle" 1 "Start" 0 "Init" ;
+
+BO_ 436 VCU_Converter_Status: 5 VCU
+SG_ Pedal_Pos : 0|12@1+ (0.125,0) [0|100] "%" GTW, BMS, CHG
+SG_ Torque_Command : 12|12@1- (1.5,100) [-1000|1500] "Nm" GTW, BMS
+SG_ VCU_State : 24|3@1+ (1,0) [0|7] "" 
+SG_ VCU_State2 : 32|3@1+ (1,0) [0|7] "" 
+
+BA_ "sendPeriod" BO_ 436 100;

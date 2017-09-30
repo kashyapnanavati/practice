@@ -1,0 +1,9 @@
+BO_  DC_DC_Converter_Status: 7 DCDC
+SG_ Input_Power : 0|12@1+ (,0) [0|1023] "kW" 
+SG_ Output_Power : 12|12@1- (1.5,100) [|] "" VCU, BMS
+SG_ DC_DC_State : 24|3@1+ (1,0) [0|] "" BMS
+
+BA_ "sendPeriod" BO_  10;
+
+BA_ "FieldType" SG_  DC_DC_State "DC_DC_State";
+VAL_  DC_DC_State 7 "Error" 6 "UnderTemp" 5 "OverTemp" 3 "Idle" 1 "Start" 0 "Init" ;

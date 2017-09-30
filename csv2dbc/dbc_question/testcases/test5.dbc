@@ -1,0 +1,11 @@
+BO_ 528 DC_DC_Converter_Status: 7 DCDC
+SG_ Input_Power : 0|12@1+ (1,0) [0|1023] "kW" VCU
+SG_ Output_Power : 12|12@1- (1.5,100) [-1000|1500] "kW" VCU, BMS
+SG_ DC_DC_State : 24|3@1+ (1,0) [0|7] "" BMS
+
+
+BA_ "FieldType" SG_ 528 Output_Power "Output_Power";
+VAL_ 528 Output_Power 7 "Error" 6 "UnderTemp" 5 "OverTemp" 1 "Start" 0 "Init" ;
+
+BA_ "FieldType" SG_ 528 DC_DC_State "DC_DC_State";
+VAL_ 528 DC_DC_State 7 "Error" 6 "UnderTemp" 5 "OverTemp" 3 "Idle" 1 "Start" 0 "Init" ;

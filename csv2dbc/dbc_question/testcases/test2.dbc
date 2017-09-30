@@ -1,0 +1,7 @@
+BO_ 412 VCU_Converter_Status2: 5 VCU
+SG_ Pedal_Pos2 : 0|12@1+ (1,0) [0|1023] "%" GTW, BMS, CHG
+SG_ Torque_Command2 : 12|12@1- (1.5,100) [-1000|1500] "Nm" GTW, BMS
+SG_ VCU_State3 : 24|3@1+ (1,0) [0|7] "" 
+SG_ VCU_State4 : 32|3@1+ (1,0) [0|7] "" 
+
+BA_ "sendPeriod" BO_ 412 100;
